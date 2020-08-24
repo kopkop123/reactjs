@@ -1,0 +1,260 @@
+* {
+    flex: none;
+    box-sizing: border-box;
+
+    &:before,
+    &:after {
+        box-sizing: border-box;
+    }
+}
+
+svg {
+    display: block;
+    fill: @c-current;
+    height: 1em;
+    width: 1em;
+
+    use {
+        pointer-events: none;
+    }
+}
+
+h1,h2,h3,p {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: top;
+}
+
+button {
+    font-family: @ff-base;
+    cursor: pointer;
+    outline: 0;
+}
+
+body {
+    font-family: @ff-base;
+    font-size: @fz-base;
+    line-height: @lh-base;
+    color: @c-base;
+    background-color: @c-white;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    box-shadow: 0 0 10px rgba(204, 204, 204, 1);
+    background-color: @c-white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    // .header__home-link
+    &__home-link {
+        text-decoration: none;
+        margin-right: 10px;
+    }
+
+    // .header__logo
+    &__logo {
+        height: 35px;
+    }
+
+    // .header__button
+    &__button {
+        background-color: @bg-button-dark;
+        color: @c-white;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 600;
+        padding: 8px 12px;
+        border-radius: 0;
+        border: 0;
+        transition: all .3s ease;
+
+        &:hover,
+        &:focus {
+            box-shadow: 2px 0 10px 1px rgb(200, 200, 200);
+        }
+    }
+
+    // .header__link
+    &__link {
+        background: none;
+        border: 0;
+        padding: 0;
+
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+        }
+    }
+}
+
+.main {
+    margin: 100px auto;
+    padding: 0 15px;
+    max-width: 890px;
+    width: 100%;
+}
+
+.catalog {
+
+    // .catalog__title
+    &__title {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    // .catalog__container
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+}
+
+.product {
+    width: 200px;
+    margin: 0 10px 40px;
+    display: flex;
+    flex-direction: column;
+
+    // .product__title
+    &__title {
+        margin-top: 20px;
+        font-weight: 700;
+        font-size: 16px;
+        color: @c-black;
+    }
+
+    // .product__price
+    &__price {
+        margin-top: 10px;
+        font-size: 12px;
+    }
+
+    // .product__description
+    &__description {
+        margin: 10px 0;
+        color: @c-black;
+        font-size: 12px;
+    }
+
+    // .product__button
+    &__button {
+        width: 100%;
+        margin-top: auto;
+        border-radius: 0;
+        border: 0;
+        background-color: @bg-button-light;
+        padding: 5px;
+        transition: all .3s ease;
+
+        &:hover,
+        &:focus {
+            background-color: darken(@bg-button-light, 10%);
+        }
+
+        // .product__button--is-edit
+        &--is-edit {
+            margin-top: 10px;
+        }
+    }
+
+    // .product__img
+    &__img {
+        height: 130px;
+    }
+
+    // .product__input
+    &__input {
+        display: block;
+        padding: 8px;
+        border-radius: 0;
+        border: 1px solid @c-input-border;
+        outline: 0;
+        transition: all .3s ease;
+
+        &:focus {
+            border-color: darken(@c-input-border, 10%);
+            box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+        }
+    }
+
+    // .product__textarea
+    &__textarea {
+        height: 100px;
+    }
+}
+
+.modal {
+    background-color: rgba(0, 0, 0, .6);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    // .modal--is-active
+    &--is-active {
+        display: flex;
+    }
+
+    // .modal__inner
+    &__inner {
+        background-color: @c-white;
+        border-radius: 5px;
+        padding: 30px 15px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+    }
+
+    // .modal__title
+    &__title {
+        color: @c-black;
+    }
+
+    // .modal__input
+    &__input {
+        display: block;
+        padding: 8px;
+        border-radius: 0;
+        border: 1px solid @c-input-border;
+        outline: 0;
+        margin-top: 10px;
+        transition: all .3s ease;
+
+        &:focus {
+            border-color: darken(@c-input-border, 10%);
+            box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+        }
+    }
+
+    // .modal__button
+    &__button {
+        border: 0;
+        background-color: @c-black;
+        color: @c-white;
+        padding: 10px;
+        transition: all .3s ease;
+
+        &:hover,
+        &:focus {
+            box-shadow: 0 0 10px rgba(255, 255, 255, .4) inset;
+        }
+    }
+
+    // .modal__button-container
+    &__button-container {
+        margin-top: 10px;
+    }
+}
